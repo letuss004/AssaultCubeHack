@@ -3,6 +3,7 @@
 
 #include "main.h"
 using namespace std;
+using std::cout;
 void changeMemoValue();
 //void keyPatch();
 
@@ -43,24 +44,22 @@ int main() {
 				mem::patchEx((BYTE*)(moduleBase + 0x637e9), (BYTE*)"\xFF\x06", 2, hProcess);
 			else
 				mem::patchEx((BYTE*)(moduleBase + 0x637e9), (BYTE*)"\xFF\x0E", 2, hProcess);
-
 		}
 
 		if (GetAsyncKeyState(VK_NUMPAD3) & 1) {
 			cout << "Recoil" << endl;
 			bRecoil = !bRecoil;
-			if (bRecoil) {
+			if (bRecoil) 
 				mem::nopEx((BYTE*)(moduleBase + 0x63786), 10, hProcess);
-			} else {
+			 else 
 				mem::patchEx((BYTE*)(moduleBase + 0x63786), (BYTE*)"\x50\x8d\x4c\x24\x1c\x51\x8b\xce\xff\xd2", 10, hProcess);
-			}
 		}
 
 		if (GetAsyncKeyState(VK_INSERT) & 1) {
 			return 0;
 		}
 
-		Sleep(1000);
+		Sleep(500);
 	}
 	cout << "Process not found!" << endl;
 	//getchar();
@@ -98,7 +97,6 @@ void changeMemoValue() {
 	// Read again
 	ReadProcessMemory(hProcess, (BYTE*)ammoAdress, &newAmmo, sizeof(newAmmo), nullptr);
 	cout << "Ammo after:" << dec << newAmmo << endl;
-
 }
 
 
