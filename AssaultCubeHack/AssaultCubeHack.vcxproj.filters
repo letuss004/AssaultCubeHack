@@ -16,21 +16,30 @@
     <Filter Include="process">
       <UniqueIdentifier>{8d0ffd7d-147c-4357-b811-ef0e09ac5d07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="memory">
+      <UniqueIdentifier>{cba324e9-d886-4da3-8c3f-50012ac4abf8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssaultCubeHack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Process.cpp">
+    <ClCompile Include="process.cpp">
       <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="mem.cpp">
+      <Filter>memory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Process.h">
+    <ClInclude Include="process.h">
       <Filter>process</Filter>
     </ClInclude>
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mem.h">
+      <Filter>memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

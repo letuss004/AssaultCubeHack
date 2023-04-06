@@ -1,4 +1,4 @@
-#include "Process.h"
+#include "process.h"
 
 using namespace std;
 
@@ -43,13 +43,9 @@ uintptr_t getModuleBaseAddress(DWORD pid, const wchar_t* modName) {
 
 uintptr_t findDMAAddy(HANDLE hProc, uintptr_t ptr, vector<unsigned int> offsets) {
 	uintptr_t address = ptr;
-	cout << address << endl;
 	for (unsigned int i = 0; i < offsets.size(); ++i) {
-		 if(i ==0) cout << address << endl;
 		ReadProcessMemory(hProc, (BYTE*)address, &address, sizeof(address), 0);
 		address += offsets[i];
-		cout << address << endl;
 	}
-	cout << address << endl;
 	return address;
 };
